@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card border-0 shadow-sm p-4">
+    <h2 class="fw-bold mb-3">About Methodology</h2>
+    <p>
+        This system uses the Vector Space Model to represent each paper and query as vectors.
+        Documents are ranked using cosine similarity over TF-IDF weighted vectors.
+    </p>
+
+    <h4 class="mt-4">1. Vector Space Model</h4>
+    <p>
+        Each document is represented as a vector of term weights:
+        <code>D = (w1, w2, ..., wn)</code>. Query is also represented in the same space.
+    </p>
+
+    <h4 class="mt-4">2. Term Frequency (TF)</h4>
+    <p>
+        Raw term frequency counts occurrences of a query term in a document:
+        <code>TF(t, d) = count of term t in document d</code>.
+    </p>
+
+    <h4 class="mt-4">3. TF-IDF</h4>
+    <p>
+        TF-IDF reduces the importance of very common terms:
+        <code>TF-IDF(t, d) = TF(t, d) * log(N / DF(t))</code>,
+        where <code>N</code> is total documents and <code>DF(t)</code> is document frequency.
+    </p>
+
+    <h4 class="mt-4">4. Cosine Similarity</h4>
+    <p>
+        Similarity between query vector <code>q</code> and document vector <code>d</code>:
+        <code>cos(q, d) = (q . d) / (||q|| * ||d||)</code>.
+        Higher values indicate stronger relevance.
+    </p>
+
+    <h4 class="mt-4">5. Precision@K</h4>
+    <p>
+        Measures relevance quality in top-k results:
+        <code>Precision@K = Relevant Documents in top K / K</code>.
+        The dashboard shows precision progression from K=1 to K=10.
+    </p>
+
+    <h4 class="mt-4">Example</h4>
+    <p>
+        For query "AI data learning", the engine preprocesses into tokens, computes TF in each document,
+        transforms to TF-IDF vectors, ranks by cosine similarity, and evaluates precision across top results.
+    </p>
+</section>
+{% endblock %}

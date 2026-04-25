@@ -1,0 +1,57 @@
+body {
+    background: #f4f8ff;
+    color: #1f2a44;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #ffffff 0%, #e9f2ff 100%);
+    border: 1px solid #d6e6ff;
+}
+
+.search-form .form-control {
+    border: 2px solid #b6d3ff;
+    border-right: 0;
+}
+
+.search-form .btn {
+    border: 2px solid #0d6efd;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+.metric-box {
+    background: #f8fbff;
+    border: 1px solid #d9e8ff;
+    border-radius: 0.75rem;
+    padding: 0.8rem;
+    height: 100%;
+}
+
+.metric-title {
+    font-size: 0.82rem;
+    color: #4f6b95;
+    margin-bottom: 0.3rem;
+}
+
+.metric-value {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #0d6efd;
+}
+
+.nav-tabs .nav-link {
+    color: #2b4b78;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link.active {
+    background: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+canvas {
+    max-height: 320px;
+}

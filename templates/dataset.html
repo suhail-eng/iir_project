@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="mb-4">
+    <h2 class="fw-bold">Academic Papers Dataset</h2>
+    <p class="text-muted">Search and inspect all indexed papers.</p>
+    <input type="text" id="datasetSearch" class="form-control mb-3" placeholder="Filter papers by title, author, category...">
+</section>
+
+<div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-striped mb-0" id="datasetTable">
+            <thead class="table-primary">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Category</th>
+                    <th>Abstract</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for paper in papers %}
+                <tr>
+                    <td>{{ paper.title }}</td>
+                    <td>{{ paper.author }}</td>
+                    <td>{{ paper.year }}</td>
+                    <td>{{ paper.category }}</td>
+                    <td>{{ paper.abstract[:150] }}...</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
